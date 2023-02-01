@@ -4,43 +4,43 @@ SUBTYPE=
 VERSION=
 SFILE=config/suite.def
 
-default: header
+default: header bin
 	@ sys/print_instructions
 
 BT: bt
-bt: header
+bt: header bin
 	cd BT; $(MAKE) CLASS=$(CLASS) SUBTYPE=$(SUBTYPE) VERSION=$(VERSION)
 
 SP: sp
-sp: header
+sp: header bin
 	cd SP; $(MAKE) CLASS=$(CLASS)
 
 LU: lu
-lu: header
+lu: header bin
 	cd LU; $(MAKE) CLASS=$(CLASS) VERSION=$(VERSION)
 
 MG: mg
-mg: header
+mg: header bin
 	cd MG; $(MAKE) CLASS=$(CLASS)
 
 FT: ft
-ft: header
+ft: header bin
 	cd FT; $(MAKE) CLASS=$(CLASS)
 
 IS: is
-is: header
+is: header bin
 	cd IS; $(MAKE) CLASS=$(CLASS)
 
 CG: cg
-cg: header
+cg: header bin
 	cd CG; $(MAKE) CLASS=$(CLASS)
 
 EP: ep
-ep: header
+ep: header bin
 	cd EP; $(MAKE) CLASS=$(CLASS)
 
 DT: dt
-dt: header
+dt: header bin
 	cd DT; $(MAKE) CLASS=$(CLASS)
 
 # Awk script courtesy cmg@cray.com, modified by Haoqiang Jin
@@ -66,3 +66,5 @@ veryclean: clean
 header:
 	@ sys/print_header
 
+bin:
+	@ mkdir bin
